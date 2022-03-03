@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.codebase.paranoidsupport">
+
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:maxSdkVersion="22" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/Theme.AdIntegrationSample"
+        tools:ignore="LockedOrientationActivity"
+        tools:targetApi="n">
+
+        <!--******************************************************  AdService Manifest  *********-->
+
+        <service
+            android:name=".service.FCMService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ad_ic_notification" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/white" />
+
+        <!--        <service android:name=".adservice.service.GPSTracker"-->
+        <!--            android:exported="false"-->
+        <!--            android:foregroundServiceType="location" />-->
+
+        <activity
+            android:exported="false"
+            android:name=".service.SplashSingleInstance"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoAnimTheme" />
+
+        <activity
+            android:exported="false"
+            android:name=".service.QurekaWebActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:exported="false"
+            android:name=".extras.LocalAdsActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:exported="false"
+            android:name=".extras.ExitActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+
+        <!--******************************************************  AppContent Manifest  ********-->
+
+        <activity
+            android:exported="true"
+            android:name=".appcontent.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:exported="false"
+            android:name=".extras.StartOneActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:exported="false"
+            android:name=".appcontent.DashboardActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:exported="false"
+            android:name=".appcontent.ThankyouActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:exported="false"
+            android:name=".appcontent.MainActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

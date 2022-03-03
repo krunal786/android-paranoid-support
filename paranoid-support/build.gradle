@@ -1,0 +1,68 @@
+buildscript {
+
+    dependencies {
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+    }
+}
+
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 19
+        targetSdk 32
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-messaging'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation "com.android.support:multidex:1.0.3"
+
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
+    implementation 'com.google.ads.mediation:facebook:6.8.0.0'
+    implementation 'com.greedygame.sdkx:core:0.0.90'
+    implementation "androidx.palette:palette-ktx:1.0.0"
+    implementation "com.squareup.moshi:moshi:1.12.0"
+    implementation "com.squareup.moshi:moshi-adapters:1.12.0"
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    annotationProcessor "com.squareup.moshi:moshi-kotlin-codegen:1.12.0"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime:2.4.1"
+    implementation "android.arch.lifecycle:common-java8:1.1.1"
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    implementation 'com.karumi:dexter:6.2.3'
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#FFBB86FC</color>
+    <color name="colorPrimary">#FF6200EE</color>
+    <color name="colorPrimaryDark">#FF3700B3</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="ad_native_background">#000000
+    </color><!--    if you have light theme design then change ad_native_background to #000000 else #FFFFFF-->
+    <color name="ad_native_text_color_original">#FFFFFF
+    </color> <!--    if you have light theme design then change ad_native_text_color_original to #FFFFFF else #000000-->
+    <color name="ad_qureka_color">#0097FF
+    </color><!--    replace with your custom native button colorCode-->
+</resources>

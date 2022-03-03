@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_custom_ad"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:visibility="visible"
+    app:cardBackgroundColor="#2B2B2B"
+    app:cardElevation="@dimen/_5sdp"
+    app:cardUseCompatPadding="true">
+
+    <ImageView
+        android:id="@+id/iv_custom_ad_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10sdp" />
+
+    <TextView
+        android:id="@+id/tv_custom_ad_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/ad_custom_background"
+        android:fontFamily="serif"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/white"
+        tools:text="@string/app_name"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Theme.AdIntegrationSample.AdAttribution"
+        android:textColor="@color/white"
+        android:layout_margin="@dimen/_5sdp" />
+
+</androidx.cardview.widget.CardView>
